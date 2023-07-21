@@ -1,17 +1,15 @@
 #include "sort.h"
 
 /**
- * quick_sort - Sorts an array of integers in ascending order using the Quick
- *              sort algorithm with Lomuto partition scheme
- * @array: Pointer to the array to be sorted
- * @size: Size of the array
+ * swap - Swaps two integers in an array
+ * @a: Pointer to the first integer
+ * @b: Pointer to the second integer
  */
-void quick_sort(int *array, size_t size)
+void swap(int *a, int *b)
 {
-	if (array == NULL || size < 2)
-		return;
-
-	quick_sort_recursion(array, size, 0, size - 1);
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
 /**
@@ -67,14 +65,17 @@ void quick_sort_recursion(int *array, size_t size, int low, int high)
 	}
 }
 
+
 /**
- * swap - Swaps two integers in an array
- * @a: Pointer to the first integer
- * @b: Pointer to the second integer
+ * quick_sort - Sorts an array of integers in ascending order using the Quick
+ *              sort algorithm with Lomuto partition scheme
+ * @array: Pointer to the array to be sorted
+ * @size: Size of the array
  */
-void swap(int *a, int *b)
+void quick_sort(int *array, size_t size)
 {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
+	if (array == NULL || size < 2)
+		return;
+
+	quick_sort_recursion(array, size, 0, size - 1);
 }
