@@ -23,14 +23,13 @@ void swap_nodes(listint_t **h, listint_t **n1, listint_t *n2)
 
 
 /**
- * insertion_sort - Implementation of insertion sort.
+ * insertion_sort_list - Implementation of insertion sort.
  * @list: A pointer to the head of the list to be sorted
  *
  * Return: Nothing
 */
 void insertion_sort_list(listint_t **list)
 {
-	unsigned i, j;
 	listint_t *curNode, *prevNode;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
